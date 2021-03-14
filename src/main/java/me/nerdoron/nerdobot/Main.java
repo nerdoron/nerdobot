@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 
 import io.github.cdimascio.dotenv.Dotenv;
 import me.nerdoron.nerdobot.commandmanager.CommandManager;
+import me.nerdoron.nerdobot.utils.tests.DbTest;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
@@ -47,7 +48,7 @@ public class Main {
 					GatewayIntent.GUILD_MESSAGE_REACTIONS, GatewayIntent.GUILD_MESSAGES, GatewayIntent.GUILD_MEMBERS
 					)
 					.build();
-			api.getPresence().setActivity(Activity.watching("over the LoungePD Discord"));
+			api.getPresence().setActivity(Activity.watching("Pogchamp moment"));
 			registerCommand(api);
 		} catch (Exception ex) {
 			logger.error("An exception occurred while trying to load the bot!", ex);
@@ -56,7 +57,8 @@ public class Main {
 	
 	private static void registerCommand(JDA jda) {
 		try {
-			new CommandManager(jda, prefix);
+			new CommandManager(jda, prefix)
+			.registerCommand(new DbTest(), "dbtest");
 		} catch (Exception ex) {
 			
 		}
