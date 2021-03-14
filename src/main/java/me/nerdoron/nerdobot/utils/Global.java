@@ -17,4 +17,13 @@ public class Global {
 		commandEvent.getChannel().sendMessage(noPerm).queue();
 	}
 	
+	public static void errorEmbed(MessageReceivedEvent commandEvent) {
+		MessageEmbed noPerm = new EmbedBuilder()
+				.setTitle("Error")
+				.setDescription("There has been an error while executing this feature or command. Don't worry though, I've notified nerdoron.")
+				.setColor(Color.RED)
+				.build();
+		commandEvent.getChannel().sendMessage(noPerm).queue();
+	}
+	
 }

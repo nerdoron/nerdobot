@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import io.github.cdimascio.dotenv.Dotenv;
+import me.nerdoron.nerdobot.utils.Global;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.entities.TextChannel;
@@ -21,11 +22,11 @@ public abstract class Command {
     	try {
         execute(commandEvent, args, logger, dotenv);
     	} catch (Exception ex ) {
-    		commandEvent.getChannel().sendMessage("There has been an error executing the command, don't worry though, the developer has been notified.");
+    		Global.errorEmbed(commandEvent);
     		logger.error("Error while tryng to execute command " + commandEvent.getMessage().getContentRaw() + "\n\n", ex);
     		String error = ExceptionUtils.getStackTrace(ex);
     		TextChannel channel = commandEvent.getJDA().getTextChannelById(dotenv.get("DEBUG_ID"));
-    		channel.sendMessage("Bruh, <@" + dotenv.get("DEV_ID") + ">, Error detected!").queue();
+    		channel.sendMessage("<@221204198287605770> Error detected!").queue();
             Timestamp timestamp = new Timestamp(System.currentTimeMillis());
             MessageEmbed errorEmbed = new EmbedBuilder()
                     .setTitle("Error!")
