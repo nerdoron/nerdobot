@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 
 import io.github.cdimascio.dotenv.Dotenv;
 import me.nerdoron.nerdobot.commandmanager.CommandManager;
+import me.nerdoron.nerdobot.commands.informative.PingCommand;
 import me.nerdoron.nerdobot.utils.tests.DbTest;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -58,7 +59,9 @@ public class Main {
 	private static void registerCommand(JDA jda) {
 		try {
 			new CommandManager(jda, prefix)
-			.registerCommand(new DbTest(), "dbtest");
+			.registerCommand(new DbTest(), "dbtest")
+			.registerCommand(new PingCommand(), "ping", "pong");
+
 		} catch (Exception ex) {
 			
 		}
