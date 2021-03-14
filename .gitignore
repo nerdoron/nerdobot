@@ -19,5 +19,18 @@
 *.tar.gz
 *.rar
 
+#pom file
+pom.xml
+
+#env file
+.env
+
+#target 
+target/
+
+#eclipse files
+.project
+.settings/
+
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
