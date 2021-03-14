@@ -1,6 +1,5 @@
 package me.nerdoron.nerdobot.commands.global.fun;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 import org.slf4j.Logger;
