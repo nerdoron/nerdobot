@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 
 import io.github.cdimascio.dotenv.Dotenv;
 import me.nerdoron.nerdobot.commandmanager.CommandManager;
-import me.nerdoron.nerdobot.commands.informative.PingCommand;
+import me.nerdoron.nerdobot.commands.global.PingCommand;
 import me.nerdoron.nerdobot.utils.tests.DbTest;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;

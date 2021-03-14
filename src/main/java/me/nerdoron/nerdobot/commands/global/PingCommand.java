@@ -1,4 +1,4 @@
-package me.nerdoron.nerdobot.commands.informative;
+package me.nerdoron.nerdobot.commands.global;
 
 import org.slf4j.Logger;
 
