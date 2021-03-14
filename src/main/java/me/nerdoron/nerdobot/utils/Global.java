@@ -26,4 +26,6 @@ public class Global {
 		commandEvent.getChannel().sendMessage(noPerm).queue();
 	}
 	
+	public static Color embedColor = new Color(35, 39, 42);
+	
 }
