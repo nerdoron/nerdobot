@@ -18,7 +18,7 @@ public abstract class Command {
 	
 	public void executeGlobal(MessageReceivedEvent commandEvent, String cmd, Object[] args) {
 		final Logger logger = LoggerFactory.getLogger(Command.class);
-		Dotenv dotenv = Dotenv.configure().directory("D:\\dev\\eclipse15\\loungepd\\.env").load();
+		Dotenv dotenv = Dotenv.load();
     	try {
         execute(commandEvent, args, logger, dotenv);
     	} catch (Exception ex ) {
