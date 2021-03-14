@@ -33,7 +33,7 @@ public class Main {
 	
 	private static void dotenv() {
 		try {
-			Dotenv dotenv = Dotenv.configure().directory("D:\\dev\\eclipse15\\nerdobot\\.env").load();
+			Dotenv dotenv = Dotenv.load();
 			logger.info("Loaded env file!");
 			logger.info("Trying to load the bot...");
 			bot(dotenv);
