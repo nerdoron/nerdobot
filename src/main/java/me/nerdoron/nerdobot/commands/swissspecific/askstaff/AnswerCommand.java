@@ -45,7 +45,7 @@ public class AnswerCommand extends Command {
 			int answeredAlready = rs.getInt("answer");
 			ps1.close();
 
-			if(answeredAlready == 1) {
+			if (answeredAlready == 1) {
 				commandEvent.getChannel().sendMessage(":x: Question already answered!").queue();
 				return;
 			}
@@ -55,7 +55,7 @@ public class AnswerCommand extends Command {
 			ps2.setString(2, authorId);
 			ps2.setInt(3, 1);
 			ps2.execute();
-			
+
 			MessageEmbed eb = new EmbedBuilder(AskStaffCommand.askYesId)
 					.addField("Answer by " + commandEvent.getAuthor().getAsTag() + ":", answer, false).build();
 
@@ -63,7 +63,6 @@ public class AnswerCommand extends Command {
 
 			commandEvent.getChannel().sendMessage(":white_check_mark: Success!").queue();
 
-			
 		} catch (Exception ex) {
 			Global.errorEmbed(commandEvent);
 			logger.error(ex.toString());

@@ -8,7 +8,7 @@ import io.github.cdimascio.dotenv.Dotenv;
 import me.nerdoron.nerdobot.commandmanager.Command;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class EightBall extends Command {
+public class EightBallCommand extends Command {
 
 	String[] responses = {
 			"http://www.redkid.net/generator/8ball/newsign.php?line1=As+I+&line2=see+it%2C&line3=Yes.&Shake+Me=Shake+Me",

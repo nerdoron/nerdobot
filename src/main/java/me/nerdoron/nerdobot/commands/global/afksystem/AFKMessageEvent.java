@@ -1,6 +1,5 @@
 package me.nerdoron.nerdobot.commands.global.afksystem;
 
-import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.util.List;
@@ -41,24 +40,22 @@ public class AFKMessageEvent extends ListenerAdapter {
 				logger.error(ex.toString());
 			}
 		}
-		
+
 		// notify if afk
-        List<Member> memberList = event.getMessage().getMentionedMembers();
-        
-        for(int i = 0; i < memberList.size(); i++) {
-        	Member target = memberList.get(i);
-        	String targetUid = target.getId();
-    		boolean targetAfk = AFKChecks.CheckAFK(targetUid);
-    		if(targetAfk == true) {
-    			MessageEmbed isAfk = new EmbedBuilder()
-    					.setTitle(":no_entry: " + target.getEffectiveName() + " is AFK!")
-    					.setDescription(target.getEffectiveName() + " is AFK, they will see your message when they get back.")
-    					.addField("Reason", AFKChecks.afkReason(targetUid), false)
-    					.setColor(Color.red)
-    					.build();
-    					event.getChannel().sendMessage(isAfk).queue();
-    		}
-        }
+		List<Member> memberList = event.getMessage().getMentionedMembers();
+
+		for (int i = 0; i < memberList.size(); i++) {
+			Member target = memberList.get(i);
+			String targetUid = target.getId();
+			boolean targetAfk = AFKChecks.CheckAFK(targetUid);
+			if (targetAfk == true) {
+				MessageEmbed isAfk = new EmbedBuilder().setTitle(":no_entry: " + target.getEffectiveName() + " is AFK!")
+						.setDescription(
+								target.getEffectiveName() + " is AFK, they will see your message when they get back.")
+						.addField("Reason", AFKChecks.afkReason(targetUid), false).setColor(Global.embedColor).build();
+				event.getChannel().sendMessage(isAfk).queue();
+			}
+		}
 
 	}
 

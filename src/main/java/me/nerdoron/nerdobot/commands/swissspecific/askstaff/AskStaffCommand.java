@@ -1,6 +1,5 @@
 package me.nerdoron.nerdobot.commands.swissspecific.askstaff;
 
-import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
@@ -9,6 +8,7 @@ import org.slf4j.Logger;
 import io.github.cdimascio.dotenv.Dotenv;
 import me.nerdoron.nerdobot.commandmanager.Command;
 import me.nerdoron.nerdobot.utils.Database;
+import me.nerdoron.nerdobot.utils.Global;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.entities.TextChannel;
@@ -25,14 +25,14 @@ public class AskStaffCommand extends Command {
 			commandEvent.getChannel().sendMessage("You must provide a question!").queue();
 			return;
 		}
-		
+
 		TextChannel askstaff = commandEvent.getGuild().getTextChannelById("820790675503054898");
 
 		MessageEmbed askNoId = new EmbedBuilder()
-				.setAuthor(commandEvent.getAuthor().getAsTag() + "'s question", null, commandEvent.getAuthor().getAvatarUrl())
-				.setDescription("Getting question...")		
-				.addField("Author ID", commandEvent.getAuthor().getId(), true)
-				.addField("Question ID", "Getting id...", true).setColor(Color.green).build();
+				.setAuthor(commandEvent.getAuthor().getAsTag() + "'s question", null,
+						commandEvent.getAuthor().getAvatarUrl())
+				.setDescription("Getting question...").addField("Author ID", commandEvent.getAuthor().getId(), true)
+				.addField("Question ID", "Getting id...", true).setColor(Global.embedColor).build();
 
 		askstaff.sendMessage(askNoId).queue((message) -> {
 			String messageId = message.getId();
@@ -40,13 +40,16 @@ public class AskStaffCommand extends Command {
 			for (int i = 0; i < args.length; i++) {
 				question = question + (i == 0 ? "" : " ") + args[i].toString();
 			}
-			
-			commandEvent.getChannel().sendMessage(":white_check_mark: Your question was sent to the staff team!\n**Please remember that sending troll questions will result in a warning. \nIf you would like to retract your question, use +retract <id>**").queue();
+
+			commandEvent.getChannel().sendMessage(
+					":white_check_mark: Your question was sent to the staff team!\n**Please remember that sending troll questions will result in a warning. \nIf you would like to retract your question, use +retract <id>**")
+					.queue();
 
 			askYesId = new EmbedBuilder()
-					.setAuthor(commandEvent.getAuthor().getAsTag() + "'s question", null, commandEvent.getAuthor().getAvatarUrl())
+					.setAuthor(commandEvent.getAuthor().getAsTag() + "'s question", null,
+							commandEvent.getAuthor().getAvatarUrl())
 					.setDescription(question).addField("Author ID", commandEvent.getAuthor().getId(), true)
-					.addField("Question ID", messageId, true).setColor(Color.green);
+					.addField("Question ID", messageId, true).setColor(Global.embedColor);
 			MessageEmbed ask = askYesId.build();
 			Connection con = Database.connect();
 			PreparedStatement ps = null;
@@ -57,7 +60,7 @@ public class AskStaffCommand extends Command {
 				ps.setString(1, messageId);
 				ps.setString(2, commandEvent.getAuthor().getId());
 				ps.setInt(3, 0);
-				ps.execute();	
+				ps.execute();
 			} catch (Exception ex) {
 				logger.error(ex.toString());
 			}

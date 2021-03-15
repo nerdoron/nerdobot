@@ -8,7 +8,8 @@ import me.nerdoron.nerdobot.commandmanager.CommandManager;
 import me.nerdoron.nerdobot.commands.global.PingCommand;
 import me.nerdoron.nerdobot.commands.global.afksystem.AFKCommand;
 import me.nerdoron.nerdobot.commands.global.afksystem.AFKMessageEvent;
-import me.nerdoron.nerdobot.commands.global.fun.EightBall;
+import me.nerdoron.nerdobot.commands.global.fun.EightBallCommand;
+import me.nerdoron.nerdobot.commands.global.fun.JokeCommand;
 import me.nerdoron.nerdobot.commands.swissspecific.askstaff.AnswerCommand;
 import me.nerdoron.nerdobot.commands.swissspecific.askstaff.AskStaffCommand;
 import me.nerdoron.nerdobot.commands.swissspecific.askstaff.RetractCommand;
@@ -72,7 +73,8 @@ public class Main {
 			.registerCommand(new AskStaffCommand(), "ask-staff", "askstaff")
 			.registerCommand(new AnswerCommand(), "answer")
 			.registerCommand(new RetractCommand(), "retract")
-			.registerCommand(new EightBall(), "8ball", "eightball");
+			.registerCommand(new JokeCommand(), "joke", "pun", "dadjoke")
+			.registerCommand(new EightBallCommand(), "8ball", "eightball");
 			logger.info("Loaded commands!");
 			logger.info("Trying to register events...");
 			hookEvents(jda);
