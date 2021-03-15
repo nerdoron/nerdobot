@@ -61,7 +61,7 @@ public class AnswerCommand extends Command {
 
 			askstaff.editMessageById(messageId, eb).queue();
 
-			commandEvent.getChannel().sendMessage(":white_check_mark: Sucess!").queue();
+			commandEvent.getChannel().sendMessage(":white_check_mark: Success!").queue();
 
 			
 		} catch (Exception ex) {
