@@ -39,6 +39,7 @@ public class AFKChecks {
 	public static String afkReason(String UID) {
 		String SQL = "SELECT REASON FROM afk WHERE UID=?";
 
+		
 		try {
 			ps = con.prepareStatement(SQL);
 			ps.setString(1, UID);
