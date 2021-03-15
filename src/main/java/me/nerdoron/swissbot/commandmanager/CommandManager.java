@@ -1,4 +1,4 @@
-package me.nerdoron.nerdobot.commandmanager;
+package me.nerdoron.swissbot.commandmanager;
 
 import java.util.HashMap;
 

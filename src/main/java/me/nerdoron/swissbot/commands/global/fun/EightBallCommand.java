@@ -1,11 +1,11 @@
-package me.nerdoron.nerdobot.commands.global.fun;
+package me.nerdoron.swissbot.commands.global.fun;
 
 import java.util.Random;
 
 import org.slf4j.Logger;
 
 import io.github.cdimascio.dotenv.Dotenv;
-import me.nerdoron.nerdobot.commandmanager.Command;
+import me.nerdoron.swissbot.commandmanager.Command;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 public class EightBallCommand extends Command {

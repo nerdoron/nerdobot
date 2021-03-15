@@ -1,11 +1,11 @@
-package me.nerdoron.nerdobot.commands.global.fun;
+package me.nerdoron.swissbot.commands.global.fun;
 
 import org.slf4j.Logger;
 
 import io.github.cdimascio.dotenv.Dotenv;
 import me.duncte123.botcommons.web.WebUtils;
-import me.nerdoron.nerdobot.commandmanager.Command;
-import me.nerdoron.nerdobot.utils.Global;
+import me.nerdoron.swissbot.commandmanager.Command;
+import me.nerdoron.swissbot.utils.Global;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;

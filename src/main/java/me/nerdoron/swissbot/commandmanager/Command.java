@@ -1,4 +1,4 @@
-package me.nerdoron.nerdobot.commandmanager;
+package me.nerdoron.swissbot.commandmanager;
 
 
 import java.sql.Timestamp;
@@ -8,7 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import io.github.cdimascio.dotenv.Dotenv;
-import me.nerdoron.nerdobot.utils.Global;
+import me.nerdoron.swissbot.utils.Global;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.entities.TextChannel;

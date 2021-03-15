@@ -1,19 +1,19 @@
-package me.nerdoron.nerdobot;
+package me.nerdoron.swissbot;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import io.github.cdimascio.dotenv.Dotenv;
-import me.nerdoron.nerdobot.commandmanager.CommandManager;
-import me.nerdoron.nerdobot.commands.global.PingCommand;
-import me.nerdoron.nerdobot.commands.global.afksystem.AFKCommand;
-import me.nerdoron.nerdobot.commands.global.afksystem.AFKMessageEvent;
-import me.nerdoron.nerdobot.commands.global.fun.EightBallCommand;
-import me.nerdoron.nerdobot.commands.global.fun.JokeCommand;
-import me.nerdoron.nerdobot.commands.swissspecific.askstaff.AnswerCommand;
-import me.nerdoron.nerdobot.commands.swissspecific.askstaff.AskStaffCommand;
-import me.nerdoron.nerdobot.commands.swissspecific.askstaff.RetractCommand;
-import me.nerdoron.nerdobot.utils.tests.DbTest;
+import me.nerdoron.swissbot.commandmanager.CommandManager;
+import me.nerdoron.swissbot.commands.askstaff.AnswerCommand;
+import me.nerdoron.swissbot.commands.askstaff.AskStaffCommand;
+import me.nerdoron.swissbot.commands.askstaff.RetractCommand;
+import me.nerdoron.swissbot.commands.global.PingCommand;
+import me.nerdoron.swissbot.commands.global.fun.EightBallCommand;
+import me.nerdoron.swissbot.commands.global.fun.JokeCommand;
+import me.nerdoron.swissbot.global.afksystem.AFKCommand;
+import me.nerdoron.swissbot.global.afksystem.AFKMessageEvent;
+import me.nerdoron.swissbot.utils.tests.DbTest;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;

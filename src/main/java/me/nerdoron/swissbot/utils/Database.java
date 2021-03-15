@@ -1,4 +1,4 @@
-package me.nerdoron.nerdobot.utils;
+package me.nerdoron.swissbot.utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -1,0 +1,21 @@
+﻿syntax = "proto3";
+
+package SwissbotCore;
+
+// Add option for java namespace?
+
+// The Swissbot gRPC service
+service SwissbotCoreService {
+	// Sends a ping with some content
+	rpc Ping(PingContent) returns(PingResult){};
+}
+
+// The content to send with the ping message
+message PingContent {
+	string text = 1;
+}
+
+// The response from the server containing some text
+message PingResult {
+	string text = 1;
+}
