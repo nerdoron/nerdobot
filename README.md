@@ -1,2 +1,2 @@
 # nerdobot
-nerdobot - replacement for swissplus poggers
+nerdobot - a nerdy bot, by nerdoron
