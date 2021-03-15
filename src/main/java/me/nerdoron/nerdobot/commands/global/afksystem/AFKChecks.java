@@ -48,7 +48,7 @@ public class AFKChecks {
 			ps.close();
 			return reason;
 		} catch (Exception ex) {
-			logger.error(ex.toString());
+			logger.error(ex.getCause().toString());
 		}
 		return null;
 	}
