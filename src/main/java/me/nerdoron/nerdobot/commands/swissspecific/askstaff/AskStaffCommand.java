@@ -41,7 +41,7 @@ public class AskStaffCommand extends Command {
 				question = question + (i == 0 ? "" : " ") + args[i].toString();
 			}
 			
-			commandEvent.getChannel().sendMessage(":white_check_mark: Your question was sent to the staff team!\n**Please remember that sending troll questions will result in a warning. If you would like to retract your question, use +retract <id>**").queue();
+			commandEvent.getChannel().sendMessage(":white_check_mark: Your question was sent to the staff team!\n**Please remember that sending troll questions will result in a warning. \nIf you would like to retract your question, use +retract <id>**").queue();
 
 			askYesId = new EmbedBuilder()
 					.setAuthor(commandEvent.getAuthor().getAsTag() + "'s question", null, commandEvent.getAuthor().getAvatarUrl())

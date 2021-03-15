@@ -11,6 +11,7 @@ import me.nerdoron.nerdobot.commands.global.afksystem.AFKMessageEvent;
 import me.nerdoron.nerdobot.commands.global.fun.EightBall;
 import me.nerdoron.nerdobot.commands.swissspecific.askstaff.AnswerCommand;
 import me.nerdoron.nerdobot.commands.swissspecific.askstaff.AskStaffCommand;
+import me.nerdoron.nerdobot.commands.swissspecific.askstaff.RetractCommand;
 import me.nerdoron.nerdobot.utils.tests.DbTest;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -70,6 +71,7 @@ public class Main {
 			.registerCommand(new AFKCommand(), "afk")
 			.registerCommand(new AskStaffCommand(), "ask-staff", "askstaff")
 			.registerCommand(new AnswerCommand(), "answer")
+			.registerCommand(new RetractCommand(), "retract")
 			.registerCommand(new EightBall(), "8ball", "eightball");
 			logger.info("Loaded commands!");
 			logger.info("Trying to register events...");
