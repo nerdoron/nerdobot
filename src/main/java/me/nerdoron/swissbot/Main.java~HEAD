@@ -4,11 +4,28 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import io.github.cdimascio.dotenv.Dotenv;
+<<<<<<< HEAD:src/main/java/me/nerdoron/swissbot/Main.java
 import me.nerdoron.swissbot.commandmanager.CommandManager;
+import me.nerdoron.swissbot.commands.askstaff.AnswerCommand;
+import me.nerdoron.swissbot.commands.askstaff.AskStaffCommand;
+import me.nerdoron.swissbot.commands.askstaff.RetractCommand;
 import me.nerdoron.swissbot.commands.global.PingCommand;
 import me.nerdoron.swissbot.commands.global.fun.EightBallCommand;
 import me.nerdoron.swissbot.commands.global.fun.JokeCommand;
+import me.nerdoron.swissbot.global.afksystem.AFKCommand;
+import me.nerdoron.swissbot.global.afksystem.AFKMessageEvent;
 import me.nerdoron.swissbot.utils.tests.DbTest;
+=======
+import me.nerdoron.nerdobot.commandmanager.CommandManager;
+import me.nerdoron.nerdobot.commands.global.PingCommand;
+import me.nerdoron.nerdobot.commands.global.afksystem.AFKCommand;
+import me.nerdoron.nerdobot.commands.global.afksystem.AFKMessageEvent;
+import me.nerdoron.nerdobot.commands.global.fun.EightBall;
+import me.nerdoron.nerdobot.commands.swissspecific.askstaff.AnswerCommand;
+import me.nerdoron.nerdobot.commands.swissspecific.askstaff.AskStaffCommand;
+import me.nerdoron.nerdobot.commands.swissspecific.askstaff.RetractCommand;
+import me.nerdoron.nerdobot.utils.tests.DbTest;
+>>>>>>> parent of 8ef14bb (some changes):src/main/java/me/nerdoron/nerdobot/Main.java
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
@@ -64,16 +81,19 @@ public class Main {
 			new CommandManager(jda, prefix)
 			.registerCommand(new DbTest(), "dbtest")
 			.registerCommand(new PingCommand(), "ping", "pong")
-			.registerCommand(new JokeCommand(), "joke", "pun", "dadjoke")
-			.registerCommand(new EightBallCommand(), "8ball", "eightball");
+			.registerCommand(new AFKCommand(), "afk")
+			.registerCommand(new AskStaffCommand(), "ask-staff", "askstaff")
+			.registerCommand(new AnswerCommand(), "answer")
+			.registerCommand(new RetractCommand(), "retract")
+			.registerCommand(new EightBall(), "8ball", "eightball");
 			logger.info("Loaded commands!");
 			logger.info("Trying to register events...");
 			hookEvents(jda);
 	}
 	
 	private static void hookEvents(JDA jda)  {
+		jda.addEventListener(new AFKMessageEvent());
 		logger.info("Loaded events!");
-		logger.info("Running GRPC client");
 	}
 	
 	

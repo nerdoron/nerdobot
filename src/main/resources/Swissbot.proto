@@ -3,6 +3,8 @@
 package SwissbotCore;
 
 // Add option for java namespace?
+option java_package = "me.nerdoron.swissbot";
+option java_multiple_files = true;
 
 // The Swissbot gRPC service
 service SwissbotCoreService {
